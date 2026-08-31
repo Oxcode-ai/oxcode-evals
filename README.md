@@ -91,7 +91,7 @@ Two agents, mapped to the same 27 findings so they read side by side:
 | Agent | Found | Incorrect findings |
 |---|:--:|:--:|
 | [OxCode 0.5.0](evals/express-weather-proxy/results/oxcode.md) | 24 / 27 | 0 |
-| [Claude Code](evals/express-weather-proxy/results/claude-code.md) | 21 / 27 | 0 |
+| [Claude Code - Opus 5.0 xHigh](evals/express-weather-proxy/results/claude-code.md) | 21 / 27 | 0 |
 
 Both found all four High-severity defects and all three separators. The
 differences are in the Low findings and in how each one justified its work,
