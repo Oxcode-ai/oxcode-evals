@@ -1,0 +1,30 @@
+probing inside swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest, the image arm b itself uses
+--- container identity
+    node        v22.23.2
+    python      Python 3.9.20
+    NET_ADMIN   0 (0 means absent)
+--- MUST SUCCEED: the gateway, via the pin, with no DNS
+    gateway http 404
+--- and DNS itself is shut, which is why the pin is needed
+    dns blocked ok
+--- MUST ALL FAIL: the open internet, by name
+    github.com                     blocked ok
+    raw.githubusercontent.com      blocked ok
+    codeload.github.com            blocked ok
+    pypi.org                       blocked ok
+--- MUST FAIL: a BARE IP, so this is not merely a DNS result
+    140.82.121.4:443               blocked ok
+    1.1.1.1:443                    blocked ok
+    8.8.8.8:443                    blocked ok
+--- MUST FAIL: the host on the bridge. BANNER probe, not curl:
+    curl against sshd reports failure because sshd is not an HTTP
+    server, which once called a wide open port closed.
+    host sshd blocked ok
+--- MUST FAIL: a git fetch, which is the actual leak route
+    git ls-remote blocked ok
+--- THE TREATMENT ARM ONE: the fix must not be in the image itself
+    commits reachable that are not ancestors of HEAD: 0
+    (0 means the image carries the past and not the answer)
+
+PROBE PASSED: closed book holds in the image arm B will use
+probe exit: 0
