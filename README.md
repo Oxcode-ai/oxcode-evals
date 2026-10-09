@@ -11,6 +11,22 @@ of this repository is the ground truth, not the scoreboard.
 
 ---
 
+## Benchmark results
+
+OxCode on two public benchmarks, with the files you need to check each number
+yourself.
+
+| Benchmark | Result | Conditions | Check it |
+|---|:--:|---|---|
+| SWE-bench Verified | **410 / 500 (82.0%)** | closed book, one attempt per instance, graded by the official SWE-bench harness | [patches, harness report, closed-book probe](benchmarks/swe-bench-verified/2026-09-25) |
+| Terminal-Bench 2.1 | **73 / 89 (82.0%)** | network on, one attempt per task, graded by each task's own tests | [per-task results](benchmarks/terminal-bench-2.1/2026-09-28) |
+
+Each result page says how the run was made and what the number does not
+include. For SWE-bench Verified, the patches can be re-graded with the official
+harness, and the report should come out the same.
+
+---
+
 ## Why ground truth is the hard part
 
 It is easy to ask an agent to review some code. It is hard to know whether its
